@@ -5,6 +5,7 @@ class GetCategory {
   Future<List<dynamic>> getCategoriesProducts(
       {required String categoryName}) async {
     List<dynamic> data = await Api()
+        // ignore: missing_required_param
         .get(url: 'https://fakestoreapi.com/products/category/$categoryName');
 
     List<ProductModel> productsList = [];

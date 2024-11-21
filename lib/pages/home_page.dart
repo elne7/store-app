@@ -34,9 +34,9 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.only(left: 16, right: 16, top: 65),
         child: FutureBuilder<List<ProductModel>>(
           future: GetAllProducts().getAllProducts(),
-          builder: (context, Snapshot) {
-            if (Snapshot.hasData) {
-              List<ProductModel> products = Snapshot.data!;
+          builder: (context, snapShot) {
+            if (snapShot.hasData) {
+              List<ProductModel> products = snapShot.data!;
               return GridView.builder(
                 itemCount: products.length,
                 clipBehavior: Clip.none,
